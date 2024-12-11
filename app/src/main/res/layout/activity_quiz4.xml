@@ -1,0 +1,135 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="#F5F5F5"
+    android:padding="24dp">
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:contentDescription="뒤로가기"
+        android:focusable="true"
+        android:src="@drawable/backspace"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <!-- 상단 ProgressBar -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/backButton"
+        style = "@android:style/Widget.ProgressBar.Horizontal"
+        android:progressDrawable="@drawable/progress_drawable"
+        android:progress = "100"
+        android:max = "100" />
+
+    <!-- 질문 텍스트 -->
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tvQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below = "@id/progressBar"
+        android:layout_marginTop = "40dp"
+        android:text="유의어가 아닌것은?"
+        android:textSize="24sp"
+        android:textColor="#000000"
+        android:textStyle = "bold"
+        android:layout_marginBottom="40dp" />
+
+    <!-- 4개의 선택지 버튼을 위한 GridLayout -->
+    <GridLayout
+        android:layout_marginTop = "150dp"
+        android:id="@+id/gridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:rowCount="2"
+        android:columnCount="2"
+        android:layout_gravity="center"
+        android:padding="8dp">
+
+        <!-- 선택지 버튼 1 -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnOption1"
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="8dp"
+            android:text="important"
+            android:textSize="18sp"
+            android:background="@drawable/button_background" />
+
+        <!-- 선택지 버튼 2 -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnOption2"
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="8dp"
+            android:text="significant"
+            android:textSize="18sp"
+            android:background="@drawable/button_background" />
+
+        <!-- 선택지 버튼 3 -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnOption3"
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="8dp"
+            android:text="essential"
+            android:textSize="18sp"
+            android:background="@drawable/button_background" />
+
+        <!-- 선택지 버튼 4 -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnOption4"
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="8dp"
+            android:text="minute"
+            android:textSize="18sp"
+            android:background="@drawable/button_background" />
+    </GridLayout>
+
+    <!-- 피드백 메시지 -->
+    <TextView
+        android:id="@+id/tvFeedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gridLayout"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textColor="#FF0000"
+        android:textStyle="bold"
+        android:visibility="gone"
+        android:text="틀렸습니다!" />
+
+    <!-- 다음 질문 버튼 -->
+    <Button
+        android:id="@+id/btnNextQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:visibility="visible"
+        android:backgroundTint="#FFFFFF"
+        android:textColor = "#000000"/>
+</RelativeLayout>
